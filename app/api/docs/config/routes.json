@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/docs/openapi.json",
+      "handler": "docs.js",
+      "config": {
+        "policies": [
+          "plugins::documentation.index"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/docs/v:major(\\d+).:minor(\\d+).:patch(\\d+)/openapi.json",
+      "handler": "docs.js",
+      "config": {
+        "policies": [
+          "plugins::documentation.index"
+        ]
+      }
+    }
+  ]
+}
